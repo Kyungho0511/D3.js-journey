@@ -1,6 +1,6 @@
 'use strict'
 
-const COUNT = 250;
+const COUNT = 200;
 const DIST = 50;
 const RADIUS_MAX = 10;
 const RADIUS_MIN = 5;
@@ -36,7 +36,7 @@ const circles = d3.select('svg')
 
 // Create force simulation
 const simulation = d3.forceSimulation(nodes)
-  .force('charge', d3.forceManyBody().strength(-3));
+  .force('charge', d3.forceManyBody().strength(-2));
 
 // Indicate how to update the graph for each tick
 simulation.on('tick', () => {

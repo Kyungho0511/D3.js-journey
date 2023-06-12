@@ -1,6 +1,6 @@
 'use strict'
 
-const COUNT = 250;
+const COUNT = 200;
 const DIST = 50;
 const RADIUS_MAX = 10;
 const RADIUS_MIN = 5;
