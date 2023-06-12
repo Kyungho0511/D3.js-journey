@@ -1,0 +1,14 @@
+svg {
+  background-color: bisque;
+}
+
+#cursor {
+  display: none;
+}
+
+svg:hover #cursor {
+  display: inline;
+  fill: red;
+  transform: translateX(-10px);
+  transform: translateY(-5px);
+}

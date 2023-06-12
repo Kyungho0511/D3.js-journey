@@ -1,10 +1,7 @@
 'use strict'
 
-/**
- * Base nodes grid
- */
 const COUNT = 500;
-const DIST = 40;
+const DIST = 50;
 const RADIUS_MAX = 10;
 const RADIUS_MIN = 5;
 
@@ -28,7 +25,7 @@ function randomPtsGenerator() {
 }
 
 // Bind data and draw nodes
-const circles = d3.select('.nodes')
+const circles = d3.select('svg')
   .selectAll('circle')
   .data(nodes)
   .join('circle')
@@ -38,11 +35,11 @@ const circles = d3.select('.nodes')
   .style('fill', 'orange');
 
 // Create force simulation
-const simulationNodes = d3.forceSimulation(nodes)
-  .force('charge', d3.forceManyBody().strength(-2));
+const simulation = d3.forceSimulation(nodes)
+  .force('charge', d3.forceManyBody().strength(-3));
 
 // Indicate how to update the graph for each tick
-simulationNodes.on('tick', () => {
+simulation.on('tick', () => {
   circles
     .attr('cx', d => d.x)
     .attr('cy', d => d.y);

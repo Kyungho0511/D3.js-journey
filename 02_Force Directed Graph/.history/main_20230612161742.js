@@ -28,7 +28,7 @@ function randomPtsGenerator() {
 }
 
 // Bind data and draw nodes
-const circles = d3.select('.nodes')
+const circles = d3.select('svg')
   .selectAll('circle')
   .data(nodes)
   .join('circle')
@@ -38,12 +38,25 @@ const circles = d3.select('.nodes')
   .style('fill', 'orange');
 
 // Create force simulation
-const simulationNodes = d3.forceSimulation(nodes)
+const simulation = d3.forceSimulation(nodes)
   .force('charge', d3.forceManyBody().strength(-2));
 
 // Indicate how to update the graph for each tick
-simulationNodes.on('tick', () => {
+simulation.on('tick', () => {
   circles
     .attr('cx', d => d.x)
     .attr('cy', d => d.y);
 })
+
+/**
+ * Mouse interactions
+ */
+const cursor = document.createElement('circle');
+cursor.setAttribute('r', 10);
+cursor.style.stroke = 'white';
+// cursor.style[stroke-width] = '3';
+svg.addEventListener('mousemove', event => {
+  console.log(`${event.x}, ${event.y}`);
+
+});
+

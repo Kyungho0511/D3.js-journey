@@ -3,7 +3,7 @@
 /**
  * Base nodes grid
  */
-const COUNT = 500;
+const COUNT = 50;
 const DIST = 40;
 const RADIUS_MAX = 10;
 const RADIUS_MIN = 5;
@@ -47,3 +47,16 @@ simulationNodes.on('tick', () => {
     .attr('cx', d => d.x)
     .attr('cy', d => d.y);
 })
+
+/**
+ * Mouse interactions
+ */
+const cursor = d3.select('#cursor');
+
+svg.addEventListener('mousemove', event => {
+  cursor
+    .attr('cx', event.x)
+    .attr('cy', event.y);
+});
+
+

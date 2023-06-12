@@ -1,0 +1,9 @@
+svg {
+  background-color: bisque;
+}
+
+.cursor {
+  r: 10;
+  cx: 100;
+  cy: 100;
+}

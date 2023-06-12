@@ -1,0 +1,13 @@
+svg {
+  background-color: bisque;
+}
+
+#cursor {
+  /* display: none; */
+  fill: red;
+}
+
+/* svg:hover #cursor {
+  display: inline;
+  fill: red;
+} */

@@ -3,7 +3,7 @@
 /**
  * Base nodes grid
  */
-const COUNT = 500;
+const COUNT = 50;
 const DIST = 40;
 const RADIUS_MAX = 10;
 const RADIUS_MIN = 5;
