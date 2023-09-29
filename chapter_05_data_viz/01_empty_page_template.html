@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>D3 Page Template</title>
+  </head>
+  <body>
+    <p>New paragraph!</p>
+    <p>
+      <script type="module">
+        import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+        d3.select("body").append("p").text("New paragraph!");
+      </script>
+    </p>
+  </body>
+</html>

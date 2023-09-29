@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>D3: Setting div heights from data</title>
+    <style type="text/css">
+      div.bar {
+        display: inline-block;
+        width: 20px;
+        height: 75px; /* Gets overridden by D3-assigned height below */
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module">
+      import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+      var dataset = [5, 10, 15, 20, 25];
+
+      d3.select("body")
+        .selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function (d) {
+          return d + "px";
+        });
+    </script>
+  </body>
+</html>
